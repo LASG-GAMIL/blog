@@ -1,4 +1,4 @@
-name: Deploy website
+name: Jekyll deploy
 
 on:
   push:
@@ -6,16 +6,14 @@ on:
       - master
 
 jobs:
-  build:
-    name: Build & deploy to GitHub Pages
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           ref: 'master'
-      - name: Build
-        uses: ./.github/actions/deploy-jekyll-gh-pages
+      - name: Build & Deploy to GitHub Pages
+        uses: BryanSchuetz/jekyll-deploy-gh-pages@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
