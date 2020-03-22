@@ -2,7 +2,7 @@
 layout: post
 title:  "正压浅水方程组"
 date:   2020-03-22 13:49:07 +0800
-categories: jekyll update
+categories: equations
 ---
 
 矢量不变形式的正压浅水方程组为
