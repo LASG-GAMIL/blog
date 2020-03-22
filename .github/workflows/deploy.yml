@@ -13,7 +13,7 @@ jobs:
         with:
           ref: 'master'
       - name: Build & Deploy to GitHub Pages
-        uses: BryanSchuetz/jekyll-deploy-gh-pages@master
+        uses: ./.github/actions/deploy-jekyll-gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
