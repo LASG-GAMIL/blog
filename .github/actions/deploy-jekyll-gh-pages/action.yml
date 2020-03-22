@@ -1,0 +1,6 @@
+name: 'Deploy new commits to gh-pages'
+author: 'Li Dong'
+desciption: 'Setup Jekyll env, build new website and deploy to gh-pages'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
