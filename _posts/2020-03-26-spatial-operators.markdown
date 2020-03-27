@@ -17,6 +17,13 @@ categories: equations
 - 水平通量算子 $\nabla \cdot \left(f \mathbf{v}\right)$
 - 水平平流算子 $\mathbf{v} \cdot \nabla f$
 
+算子之间的关系（通过内积定义）
+
+$$
+\left(\nabla \cdot \mathbf{F}, g\right) = - \left(\mathbf{F}, \nabla g\right) \\
+\left(\nabla \times \mathbf{F}, g\right) = - \left(\mathbf{F}, \nabla^{\perp} g\right)
+$$
+
 ## 球面坐标系形式
 
 球坐标系下的矢量在计算导数时存在一定问题，因为球坐标基矢量随坐标变化，所以矢量的空间变化包含了基矢量的变化。下面列出的是各个算子的微分形式：
@@ -42,7 +49,7 @@ $$
 - 水平通量算子
 
 $$
-\nabla \cdot \left(\mathbf{v} f\right) = \frac{1}{a \cos{\varphi}} \left( \frac{\partial f v}{\partial \lambda} + \frac{\partial f v \cos{\varphi}}{\partial \varphi} \right)
+\nabla \cdot \left(\mathbf{v} f\right) = \frac{1}{a \cos{\varphi}} \left( \frac{\partial f u}{\partial \lambda} + \frac{\partial f v \cos{\varphi}}{\partial \varphi} \right)
 $$
 
 - 水平平流算子
@@ -66,7 +73,6 @@ $$
 $$
 
 其中$d\mathbf{l}$是沿着二维区域$A$边界的线段矢量，$ds$是沿区域$A$边界的面元，$\mathbf{n}$是$ds$的法向量，指向区域$A$外侧，$|A|$是区域面积或体积。
-
 
 ## 离散方法
 
