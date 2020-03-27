@@ -53,11 +53,20 @@ $$
 
 积分形式更容易操作
 
+- 水平旋度算子
+
+$$
+\left[\nabla \times \mathbf{v} \right]_A := \lim_{|A| \to 0} \frac{1}{|A|} \int_{\partial A} \mathbf{v} \cdot d\mathbf{l}
+$$
+
 - 水平通量算子
 
 $$
-\nabla \cdot \left(\mathbf{v} f\right) = \frac{1}{A} \sum_{e} f_e \mathbf{u}_e \cdot \mathbf{n}_e
+\left[\nabla \cdot \left(\mathbf{v} f\right)\right]_A := \lim_{|A| \to 0} \frac{1}{|A|} \int_{\partial A} f \mathbf{u} \cdot \mathbf{n} ds
 $$
+
+其中$d\mathbf{l}$是沿着二维区域$A$边界的线段矢量，$ds$是沿区域$A$边界的面元，$\mathbf{n}$是$ds$的法向量，指向区域$A$外侧，$|A|$是区域面积或体积。
+
 
 ## 离散方法
 
@@ -65,7 +74,7 @@ $$
 
 ![质量散度](/blog/assets/img/mass-flux-discretization.jpg){: .img-center .img-half-size .img-responsive}
 $$
-\left(\nabla \cdot \mathbf{v} f\right)_{i,j} = \frac{1}{A_j} \left[ \left(l_e u \hat{f}_e \right)_{i+\frac{1}{2},j} - \left( l_e u \hat{f}_e \right)_{i-\frac{1}{2},j} + \left( l_e v \hat{f}_e \right)_{i,j+\frac{1}{2}} - \left( l_e v \hat{f}_e \right)_{i,j-\frac{1}{2}} \right]
+\left[\nabla \cdot \left( \mathbf{v} f \right)\right]_{i,j} = \frac{1}{A_j} \left[ \left(l_e u \hat{f}_e \right)_{i+\frac{1}{2},j} - \left( l_e u \hat{f}_e \right)_{i-\frac{1}{2},j} + \left( l_e v \hat{f}_e \right)_{i,j+\frac{1}{2}} - \left( l_e v \hat{f}_e \right)_{i,j-\frac{1}{2}} \right]
 $$
 
 {% endkatexmm %}
