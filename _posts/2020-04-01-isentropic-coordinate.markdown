@@ -52,7 +52,7 @@ $$
 其中$\Pi$为Exner函数
 
 $$
-\Pi = c_p \left( \frac{p}{p_0} \right)^{\frac{c_p}{R_d}}
+\Pi = c_p \left( \frac{p}{p_0} \right)^{\frac{R_d}{c_p}}
 $$
 
 # 热力学方程
@@ -105,7 +105,36 @@ $$
 
 # 动量方程
 
-气压梯度力
+气压梯度力在高度、气压、经典气压地形追随坐标系下的形式为
+
+$$
+\ - \frac{1}{\rho} \nabla_z p, \quad - \nabla_p \phi, \quad - \frac{1}{\rho} \nabla_\sigma p - \nabla_\sigma \phi
+$$
+
+从高度坐标推等熵坐标的气压梯度力
+
+$$
+\ - \frac{1}{\rho} \nabla_z p = - \frac{1}{\rho} \nabla_\theta p + \frac{\partial p}{\partial z} \nabla_\theta z = - {\color{red}\frac{1}{\rho} \nabla_\theta p} - \nabla_\theta \phi
+$$
+
+其中红色项需要进一步推导（带入理想气体状态方程和位温定义式）
+
+$$
+\begin{matrix}
+  {\color{red}\frac{1}{\rho} \nabla_\theta p}
+  & = \frac{R_d T}{p} \nabla_\theta p = \frac{R_d}{p} \theta \left( \frac{p}{p_0} \right)^{\frac{R_d}{c_p}} \nabla_\theta p \\
+  & = \theta \frac{R_d}{c_p} c_p \left( \frac{p}{\color{blue}p_0} \right)^{-1} \left( \frac{p}{p_0} \right)^{\frac{R_d}{c_p}} \nabla_\theta \frac{p}{\color{blue}p_0} \\
+  & = \theta \nabla_\theta c_p \left( \frac{p}{p_0} \right)^{\frac{R_d}{c_p}} = \theta \nabla_\theta \Pi = {\color{cyan} \nabla_\theta \theta \Pi}
+\end{matrix}
+$$
+
+则等熵坐标系下的气压梯度力为
+
+$$
+\ - \frac{1}{\rho} \nabla_z p = - \nabla_\theta \left(\theta \Pi + \phi\right) = - \nabla_\theta M
+$$
+
+其中$M$是干静力能，或称为Montgomery势。从气压坐标推导也可以得到同样的结果
 
 $$
 \ - \nabla_p \phi = - \nabla_\theta M
